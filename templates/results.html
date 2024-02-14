@@ -1,0 +1,15 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Demand Levels for Your Skills:</h1>
+    <ul>
+        {% for result in results %}
+            <li>Skill: {{ result.skill }}, Demand Level: {{ result.demand_level }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

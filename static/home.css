@@ -1,0 +1,19 @@
+#header {
+    text-align: center;
+}
+#skill-form {
+    text-align: center;
+}
+#result {
+    text-align: center;
+}
+button {
+    margin-top: 10px;
+    background-color: aqua;
+}
+#skills {
+    width: 50%;
+}
+#result {
+    margin-top: 10px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Demand Prediction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+<style>
+   
+</style>
+</head>
+<body>
+    <h1 id="header">Skill Demand Prediction</h1>
+    <form id="skill-form">
+        <label for="skills">Enter your skills separated by commas:</label><br>
+        <input type="text" id="skills" name="skills"><br>
+        <button type="button" onclick="predict()">Predict</button>
+    </form>
+    <div id="result"></div>
+    <script>
+        function predict() {
+            var skills = $("#skills").val();
+            $.ajax({
+                url: "/predict",
+                type: "POST",
+                data: { skills: skills },
+                success: function(data) {
+                    $("#result").html(data);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
